@@ -24,6 +24,34 @@
 // divFormLeft.appendChild(littleTitle);
 
 // const formular = document.createElement('form');
+// const images = document.querySelectorAll(".honeycomb-cell img");
+// let imgSrc;
+// // get images src onclick
+// images.forEach((img) => {
+//     img.addEventListener("click", (e) => {
+//         imgSrc = e.target.src;
+//     });
+// });
+// //creating the modal
+// let imgModal = (src) => {
+//     const modal = document.createElement("li");
+//     modal.setAttribute("class", "modal");
+//     //add the modal to the main section or the parent element
+//     document.querySelector(".honeycomb").append(modal);
+//     //adding image to modal
+//     const newImage = document.createElement("img");
+//     newImage.setAttribute("src", src);
+//     modal.append(newImage)
+// };
+// //creating the close button
+// const closeBtn = document.createElement("i");
+// closeBtn.setAttribute("class", "fa-thin fa-square-xmark");
+// //close function
+// closeBtn.onclick = () => {
+//     modal.remove();
+// };
+// modal.append(newImage, closeBtn);
+
 (function () {
     const bluePicture = [];
     const streetPicture = [];
@@ -31,33 +59,26 @@
     const sunrisesPicture = [];
     const parisPicture = [];
   
-    const main = document.querySelector(".main");
-    const div = document.createElement("section");
-    div.classList.add("modal");
-    main.appendChild(div);
+    // const main = document.querySelector(".main");
+    // const div = document.createElement("section");
+    // div.classList.add("modal");
+    // main.appendChild(div);
   
-    const filigram = document.createElement("div");
-    filigram.classList.add("filigram");
-    div.appendChild(filigram);
+    // const filigram = document.createElement("div");
+    // filigram.classList.add("filigram");
+    // div.appendChild(filigram);
   
-    const modalContent = document.createElement("div");
-    modalContent.classList.add("modal-content");
-    div.appendChild(modalContent);
+    // const modalContent = document.createElement("div");
+    // modalContent.classList.add("modal-content");
+    // div.appendChild(modalContent);
   
-    const modal = (imgsrc) => {
-      const img = document.createElement("img");
-      img.src = imgsrc;
-      img.alt = "images modal";
-      modalContent.appendChild(img);
+    // const modal = (imgsrc) => {
+    //   const img = document.createElement("img");
+    //   img.src = imgsrc;
+    //   img.alt = "images modal";
+    //   modalContent.appendChild(img);
+    // };
     
-    };
-    const modal1 = (imgsrc) => {
-      const img = document.createElement("img");
-      img.src = imgsrc;
-      img.alt = "images modal";
-      modalContent.appendChild(img);
-    
-    };
     [document.querySelector('.paris'), 
     document.querySelector('.sunrises'), 
     document.querySelector('.rainbows'), 
@@ -66,22 +87,25 @@
         item.addEventListener('click', (e) => {
           e.preventDefault();
           const images = document.getElementsByClassName('honeycomb-cell_title');
-          const image = getImage(images, item.className)
+          const image = getImage(images, item.className);
           console.log(image);
-          
-          modal1(image);
+  
+         // getModalImage(className, idName);
+          //modal('medbleu.png');
          // modal.classList.toggle("show-modal");
         });
       })
   })();
   
-  function toggleModal() {
-    modal.classList.toggle("show-modal");
-  }
+  function getModalImage(modalIdName, ImageIdName, modalImageIdName) {
   
-  function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
+    let modal = document.getElementById(modalIdName);
+    let img = document.getElementById(ImageIdName);
+    let modalImg = document.getElementById(modalImageIdName);
+  
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
     }
   }
   
@@ -95,6 +119,7 @@
         console.log(imageId);
         const returnedImage = document.getElementById(imageId).previousElementSibling;
         console.log(returnedImage);
+        
       }
     })
     return returnedImage;
