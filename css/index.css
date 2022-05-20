@@ -587,11 +587,13 @@ i {
 }
 
 .text-box img {
-    width: 100%;
-    height: auto;
+    width: 19%;
+    height: 20%;
     max-width: 350px;
 }
-
+.articletitle h2{
+    padding-bottom: 10%;
+}
 .box-content {
     margin: 21px;
 }
