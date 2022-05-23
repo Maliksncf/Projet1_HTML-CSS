@@ -16,8 +16,8 @@
         </div>
         <ul class="navbar">
             <li class="item"><a href="index.html">Home</a></li>
-            <li class="item"><a href="articles.html">Articles</a> </li>
-            <li class="item"><a href="gallery.html">Gallery</a></li>
+            <li class="item"><a href="article.html">Articles</a> </li>
+            <li class="item active"><a href="gallery.html">Gallery</a></li>
             <li class="item"><a href="contact.html">Contact</a></li>
         </ul>
 
@@ -28,32 +28,41 @@
     <main class="main">
         <section class="bee">
             <ul class="honeycomb">
+                <li class=" honeycomb-cell">
+                    <img id="blueImage" src="assets/meduses.png" alt="" class="honeycomb-cell_img">
+                    </img>
+                    <div id="blue" class="honeycomb-cell_title blue">Blue</div>
+                </li>
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+                <li class="honeycomb-cell honeycomb-hidden"></li>
                 <li class="honeycomb-cell">
-                    <img src="assets/meduses.png" alt="" class="honeycomb-cell_img"/>
-                    <div class="honeycomb-cell_title blue">Blue</div>
+                    <img id="streetImage" src="assets/lion.png" alt="" class="honeycomb-cell_img">
+                    </img>
+                    <div id="street" class="honeycomb-cell_title street">Street Art</div>
                 </li>
                 <li class="honeycomb-cell honeycomb-hidden"></li>
                 <li class="honeycomb-cell">
-                    <img src="assets/lion.png" alt="" class="honeycomb-cell_img">
+                    <img id="rainbowsImage" src="assets/rainbow.png" alt="" class="honeycomb-cell_img">
+                    </img>
+                    <div id="rainbows" class="honeycomb-cell_title rainbows">Rainbows</div>
+                </li>
+                <li class="honeycomb-cell honeycomb-hidden"></li>
+                <li class="honeycomb-cell">
+                    <img id="sunrisesImage" src="assets/sunrise.png" alt="" class="honeycomb-cell_img">
 
                     </img>
-                    <div class="honeycomb-cell_title street">Street Art</div>
+                    <div id="sunrises" class="honeycomb-cell_title sunrises">Sunrises</div>
                 </li>
                 <li class="honeycomb-cell honeycomb-hidden"></li>
                 <li class="honeycomb-cell">
-                    <img src="assets/rainbow.png" alt="" class="honeycomb-cell_img"/>
-                    <div class="honeycomb-cell_title rainbows">Rainbows</div>
-                </li>
-                <li class="honeycomb-cell honeycomb-hidden"></li>
-                <li class="honeycomb-cell">
-                    <img src="assets/sunrise.png" alt="" class="honeycomb-cell_img"/>
-
-                    <div class="honeycomb-cell_title sunrises">Sunrises</div>
-                </li>
-                <li class="honeycomb-cell honeycomb-hidden"></li>
-                <li class="honeycomb-cell">
-                    <img src="assets/face.png" alt="photo of facewall" class="honeycomb-cell_img"/>
-                    <div class="honeycomb-cell_title paris">Paris</div>
+                    <img id="parisImage" src="assets/face.png" alt="" class="honeycomb-cell_img">
+                    
+                    </img>
+                    <div id="paris" class="honeycomb-cell_title paris">Paris</div>
                 </li>
                 <li class="honeycomb-cell honeycomb-hidden"></li>
             </ul>
@@ -62,7 +71,7 @@
     <footer>
         <img src="assets/logo.png" alt="">
         <p>
-            Something Ave 253 - Second Floor Los Angeles - United States (+044) 555 123 1234
+            Something Ave 253 - Second Floor Los Angeles - United States (+044) 555 123 1234- contact@honeycomb.com
         </p>
     </footer>
     <script src="js/index.js"></script>

@@ -58,26 +58,6 @@
     const rainbowsPicture = [];
     const sunrisesPicture = [];
     const parisPicture = [];
-  
-    // const main = document.querySelector(".main");
-    // const div = document.createElement("section");
-    // div.classList.add("modal");
-    // main.appendChild(div);
-  
-    // const filigram = document.createElement("div");
-    // filigram.classList.add("filigram");
-    // div.appendChild(filigram);
-  
-    // const modalContent = document.createElement("div");
-    // modalContent.classList.add("modal-content");
-    // div.appendChild(modalContent);
-  
-    // const modal = (imgsrc) => {
-    //   const img = document.createElement("img");
-    //   img.src = imgsrc;
-    //   img.alt = "images modal";
-    //   modalContent.appendChild(img);
-    // };
     
     [document.querySelector('.paris'), 
     document.querySelector('.sunrises'), 
@@ -89,10 +69,7 @@
           const images = document.getElementsByClassName('honeycomb-cell_title');
           const image = getImage(images, item.className);
           console.log(image);
-  
-         // getModalImage(className, idName);
-          //modal('medbleu.png');
-         // modal.classList.toggle("show-modal");
+         getModalImage('myModal',image.id, 'img01');
         });
       })
   })();
@@ -102,24 +79,25 @@
     let modal = document.getElementById(modalIdName);
     let img = document.getElementById(ImageIdName);
     let modalImg = document.getElementById(modalImageIdName);
+    modal.style.display = "block";
+    modalImg.src = img.src; 
+  }
   
-    img.onclick = function(){
-      modal.style.display = "block";
-      modalImg.src = this.src;
-    }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() { 
+    let modal = document.getElementById('myModal');
+    modal.style.display = "none";
   }
   
   function getImage(imageList, imageName) {
   
-    const returnedImage = '';
+    let returnedImage = [];
     Array.from(imageList).forEach((image) => {
   
       if (image.className === imageName ) {
         const imageId = image.id;
-        console.log(imageId);
-        const returnedImage = document.getElementById(imageId).previousElementSibling;
-        console.log(returnedImage);
-        
+        const previousSibling = document.getElementById(imageId).previousElementSibling;
+        returnedImage = previousSibling;
       }
     })
     return returnedImage;
